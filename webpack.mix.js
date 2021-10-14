@@ -11,7 +11,15 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+const jsFile = [
+    'resources/js/app.js',
+    'resources/js/loja.js'
+];
+
+mix.js(jsFile, 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
-    ]);
+    ])
+    .postCss('resources/css/loja.css', 'public/css').options({
+        processCssUrls: false
+    });
