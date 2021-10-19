@@ -21,31 +21,53 @@
 }
 
 .header .shadow {
--webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
--moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+.logotipo > img {
+  @apply w-24 sm:w-28 md:w-36 lg:w-48 min-w-max;
+}
+
+.header-nav {
+  @apply hidden md:block;
+}
+
+.header-nav > ul {
+  @apply flex flex-row list-none md:space-x-3 lg:space-x-6 text-indigo-700 text-base font-medium;
+}
+
+.header-nav > ul a {
+  @apply py-2 px-3 rounded hover:bg-indigo-100;
 }
 
 .list-menu {
   visibility: hidden;
   opacity: 0;
-  margin-top: 96px;
   -webkit-transition: ease-in 150ms;
   -moz-transition: ease-in 150ms;
   -o-transition: ease-in 150ms;
   transition: ease-in 150ms
 }
 
-.active {
+.list-menu.active {
+  @apply flex justify-center pt-10 fixed z-40 w-full h-full bg-indigo-500 text-white;
   visibility: visible;
   opacity: 1;
+  margin-top: 96px;
   -webkit-transition: ease-out 150ms;
   -moz-transition: ease-out 150ms;
   -o-transition: ease-out 150ms;
   transition: ease-out 150ms
 }
 
-#burgerToggle {
+.list-menu > ul {
+  @apply flex flex-col font-semibold space-y-6 justify-start items-center;
+}
+
+.burger-toggle {
+  @apply select-none md:hidden;
   width: 20px;
   height: 15px;
   position: relative;
@@ -60,7 +82,7 @@ box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   cursor: pointer;
 }
 
-#burgerToggle span {
+.burger-toggle span {
   display: block;
   position: absolute;
   height: 3px;
@@ -79,19 +101,19 @@ box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   transition: .25s ease-in-out;
 }
 
-#burgerToggle span:nth-child(1) {
+.burger-toggle span:nth-child(1) {
   top: 0px;
 }
 
-#burgerToggle span:nth-child(2) {
+.burger-toggle span:nth-child(2) {
   top: 6px;
 }
 
-#burgerToggle span:nth-child(3) {
+.burger-toggle span:nth-child(3) {
   top: 12px;
 }
 
-#burgerToggle.on span:nth-child(1) {
+.burger-toggle.on span:nth-child(1) {
   top: 6px;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
@@ -99,12 +121,12 @@ box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   transform: rotate(135deg);
 }
 
-#burgerToggle.on span:nth-child(2) {
+.burger-toggle.on span:nth-child(2) {
   opacity: 0;
   left: -20px;
 }
 
-#burgerToggle.on span:nth-child(3) {
+.burger-toggle.on span:nth-child(3) {
   top: 6px;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
@@ -115,6 +137,7 @@ box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 /* MAIN */
 
 .main {
+  @apply bg-gray-100;
     grid-area: main;
     height: 100%;
     width: 100%;
@@ -124,12 +147,30 @@ box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 /* FOOTER */
 
 .footer {
+  @apply flex py-10 px-5 lg:px-10 justify-center items-center relative border-t-4 border-indigo-800;
   grid-area: sub-footer;
   height: 100%;
   width: 100%;
 }
 
+.footer > ul {
+  @apply flex flex-col sm:flex-row sm:space-x-32 md:space-x-40 lg:space-x-60;
+}
+
+.footer > ul li {
+  @apply flex flex-col mb-3 sm:mb-0 justify-start items-center sm:justify-start sm:items-start;
+}
+
+.footer > ul li h4 {
+  @apply mb-1 text-indigo-900 text-base font-medium;
+}
+
+.footer > ul li a {
+  @apply mb-2 text-gray-600 text-sm font-normal;
+}
+
 .sub-footer {
+  @apply flex justify-between items-center px-5 lg:px-10 border-t border-gray-300 bg-white text-gray-600;
   grid-area: footer;
   height: 65px;
   width: 100%;

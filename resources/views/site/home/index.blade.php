@@ -4,10 +4,10 @@
     
 <section class="home">
     <!-- Hero Banner -->
-    <div class="hero-banner text-white flex flex-col justify-start items-center">
+    <div class="hero-banner">
         <h1 class="font-semibold mt-40">Welcome to the site</h1>
         <h5 class="font-light">Varius, noster devatios etiam imperium de velox, fortis adiurator.</h5>
-        <a href="">Get started</a>
+        <a href="{{ route('site.home') }}">Get started</a>
     </div>
 
     <!-- Products -->

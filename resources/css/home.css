@@ -4,6 +4,7 @@
 }
 
 .hero-banner {
+    @apply text-white flex flex-col justify-start items-center;
     height: 100vh;
     background-image: 
         linear-gradient(to top right, rgba(228, 221, 221, 0.50) 10%, rgba(0, 0, 0, 0.50) 60%), 
