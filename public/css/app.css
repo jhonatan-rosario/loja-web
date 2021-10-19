@@ -1,3 +1,156 @@
+.landing-page {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: 96px 1fr 0.5fr 65px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main" "sub-footer" "footer";
+}
+
+/* HEADER */
+
+.header {
+  position: fixed;
+  z-index: 50;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  --tw-bg-opacity: 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.header {
+  grid-area: header;
+  height: 96px;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  place-content: space-between;
+  align-items: center
+}
+
+.header .shadow {
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+.list-menu {
+  visibility: hidden;
+  opacity: 0;
+  margin-top: 96px;
+  transition: ease-in 150ms
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+  transition: ease-out 150ms
+}
+
+#burgerToggle {
+  width: 20px;
+  height: 15px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#burgerToggle span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #3730A3;
+  border-radius: 4px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+#burgerToggle span:nth-child(1) {
+  top: 0px;
+}
+
+#burgerToggle span:nth-child(2) {
+  top: 6px;
+}
+
+#burgerToggle span:nth-child(3) {
+  top: 12px;
+}
+
+#burgerToggle.on span:nth-child(1) {
+  top: 6px;
+  transform: rotate(135deg);
+}
+
+#burgerToggle.on span:nth-child(2) {
+  opacity: 0;
+  left: -20px;
+}
+
+#burgerToggle.on span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-135deg);
+}
+
+/* MAIN */
+
+.main {
+  grid-area: main;
+  height: 100%;
+  width: 100%;
+  font-size: xx-large;
+}
+
+/* FOOTER */
+
+.footer {
+  grid-area: sub-footer;
+  height: 100%;
+  width: 100%;
+}
+
+.sub-footer {
+  grid-area: footer;
+  height: 65px;
+  width: 100%;
+}
+
+.dots-pattern {
+  background-image: url(../images/dots-pattern.svg);
+  /* background-repeat: repeat-x; */
+  width: 100%;
+  height: 18px;
+  position: absolute;
+  top: 3px
+}
+.home {
+  position: relative;
+  top: -96px;
+}
+
+.hero-banner {
+  height: 100vh;
+  background-image: 
+        linear-gradient(to top right, rgba(228, 221, 221, 0.50) 10%, rgba(0, 0, 0, 0.50) 60%), 
+        url(../images/smartphones-banner.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 /*! tailwindcss v2.2.16 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */

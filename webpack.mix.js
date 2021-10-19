@@ -16,10 +16,22 @@ const jsFile = [
     'resources/js/loja.js'
 ];
 
-mix.js(jsFile, 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        require("tailwindcss"),
-    ])
-    .postCss('resources/css/loja.css', 'public/css').options({
-        processCssUrls: false
-    });
+mix.js(jsFile, 'public/js');
+    
+mix.postCss('resources/css/app.css', 'public/css', [
+    require("tailwindcss"),
+]);
+
+mix.options({
+    processCssUrls: false,
+    postCss: [require('autoprefixer')]
+});
+
+// mix.styles('resources/css/*.css', 'public/css/app.css', [
+//     require("tailwindcss")
+// ]);
+
+// .postCss('resources/css/loja.css', 'public/css').options({
+//     processCssUrls: false
+// });
+

@@ -25,16 +25,17 @@
 
     <!-- CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/loja.css') }}" rel="stylesheet">
     
     <title>Loja</title>
 </head>
 <body class="h-screen">
     <div class="landing-page">
-        <header id="header" class="header z-50 px-5 lg:px-10 fixed border-b border-gray-300 bg-white">
-            <div class="flex w-full h-full place-content-between items-center">
+        <header id="header" 
+        {{-- border-b border-gray-300 --}}
+            class="header">
+            <div class="header-content">
 
-                <a class="" href="{{ route('site.home') }}">
+                <a class="logotipo" href="{{ route('site.home') }}">
                     <img class="w-24 sm:w-28 md:w-36 lg:w-48 min-w-max" src="{{ asset('images/logoipsum-logo.svg') }}" alt="Logo">
                 </a>
                 
@@ -53,9 +54,6 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    {{-- <div id="one" class="stripe"></div>
-                    <div id="two" class="stripe"></div>
-                    <div id="three" class="stripe"></div> --}}
                 </div>
 
             </div>
