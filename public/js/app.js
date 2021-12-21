@@ -2107,11 +2107,11 @@ var addShadowOnHeader = function addShadowOnHeader() {
   var listMenu = document.getElementById('listMenu');
 
   if (scrollY > 0) {
-    if (!header.classList.contains('shadow')) {
-      header.classList.add('shadow');
+    if (!header.classList.contains('header-sticky')) {
+      header.classList.add('header-sticky');
     }
   } else {
-    header.classList.remove('shadow');
+    header.classList.remove('header-sticky');
   }
 };
 
